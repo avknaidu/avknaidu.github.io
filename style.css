@@ -33,6 +33,32 @@ section {
   margin-bottom: 2rem;
 }
 
+#profile {
+  padding: 2rem;
+  background-color: #fff;
+}
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.profile-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.profile-info h3 {
+  margin: 0;
+}
+.profile-info a {
+  color: #0078d4;
+  text-decoration: none;
+}
+.profile-info a:hover {
+  text-decoration: underline;
+}
+
 #apps .app-list {
   display: flex;
   flex-wrap: wrap;
