@@ -179,7 +179,20 @@ main {
 }
 
 section {
+  scroll-margin-top: 96px;
   margin-bottom: 4rem;
+}
+
+@media (max-width: 768px) {
+  section {
+    scroll-margin-top: 96px;
+  }
+}
+
+@media (max-width: 980px) {
+  section {
+    scroll-margin-top: 148px;
+  }
 }
 
 /* ===== PROFILE SECTION ===== */
