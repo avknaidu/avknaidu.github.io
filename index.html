@@ -23,8 +23,8 @@
       <nav>
         <a href="#profile">Profile</a>
         <a href="#apps">Apps</a>
+        <a href="#certification">Certifications</a>
         <a href="#ai-capabilities">AI Showcase</a>
-        <a href="#certification">Certification</a>
         <a href="#contact">Contact</a>
       </nav>
       <div class="theme-toggle">
@@ -110,20 +110,20 @@
             alt="Morse Alphabets icon" />
           <h3>Morse Alphabets</h3>
           <p>Learn and practice Morse code with audio and interactive exercises.</p>
-            <div class="store-badge">
-              <a class="store-btn" href="https://apps.microsoft.com/detail/9n8g6jcf9mrk" target="_blank"
-                rel="noopener noreferrer">
-                <span class="icon">🛒</span>
-                <span>Download from Microsoft Store</span>
-              </a>
-            </div>
+          <div class="store-badge">
+            <a class="store-btn" href="https://apps.microsoft.com/detail/9n8g6jcf9mrk" target="_blank"
+              rel="noopener noreferrer">
+              <span class="icon">🛒</span>
+              <span>Download from Microsoft Store</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- CERTIFICATION -->
     <section id="certification">
-      <h2>Certification</h2>
+      <h2>Certifications</h2>
       <p>I’m continuously learning and upgrading my skills. Recently, I completed a foundational AI certification.</p>
       <div class="cert-card">
         <div class="cert-title"><strong>Google AI Essentials</strong></div>
@@ -216,8 +216,11 @@
     (function () {
       const body = document.body;
       const toggle = document.getElementById('themeToggle');
+      const navLinks = document.querySelectorAll('nav a[href^="#"]');
+      const sections = Array.from(document.querySelectorAll('main section[id]'));
+      const header = document.querySelector('header');
 
-      // Load stored theme or respect OS preference on first visit
+      // ---------- THEME TOGGLE ----------
       const stored = window.localStorage.getItem('theme');
       if (stored === 'light' || stored === 'dark') {
         body.setAttribute('data-theme', stored);
@@ -235,8 +238,49 @@
           window.localStorage.setItem('theme', newTheme);
         });
       }
+
+      // ---------- ACTIVE NAV ON SCROLL ----------
+      const linkById = {};
+      navLinks.forEach(link => {
+        const hash = link.getAttribute('href');
+        if (!hash || !hash.startsWith('#')) return;
+        linkById[hash.slice(1)] = link;
+      });
+
+      function getHeaderHeight() {
+        return header ? header.getBoundingClientRect().height : 0;
+      }
+
+      function updateActiveNav() {
+        const style = getComputedStyle(header);
+        const extra = parseInt(style.paddingTop) + parseInt(style.paddingBottom) + 48;
+        const scrollPos = window.scrollY + header.offsetHeight + extra;
+        let currentId = sections[0] ? sections[0].id : null;
+
+        for (const section of sections) {
+          if (section.offsetTop <= scrollPos) {
+            currentId = section.id;
+          }
+        }
+
+        if (!currentId) return;
+
+        navLinks.forEach(link => link.classList.remove('active'));
+        const activeLink = linkById[currentId];
+        if (activeLink) activeLink.classList.add('active');
+      }
+
+      // Run on load + scroll + resize
+      window.addEventListener('scroll', updateActiveNav, {
+        passive: true
+      });
+      window.addEventListener('resize', updateActiveNav);
+      window.addEventListener('load', updateActiveNav);
+      updateActiveNav();
     })();
   </script>
+
+
 </body>
 
 </html>
