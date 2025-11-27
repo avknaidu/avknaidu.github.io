@@ -1,105 +1,242 @@
+<!-- Modernized Portfolio Website -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AVK Naidu | Home</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script>
-  <link rel="icon" type="image/jpeg" href="logo.jpg" />
+  <title>AVK Naidu | Portfolio</title>
+
+  <!-- Aptos font from Microsoft -->
+  <link rel="stylesheet"
+    href="https://static2.sharepointonline.com/files/fabric-cdn-prod_20230815.001/assets/fonts/apto/Aptos.css" />
+
+  <!-- Your main stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body>
+<body data-theme="dark">
+
   <header>
     <h1>AVK Naidu</h1>
-    <nav>
-      <a href="#profile">Profile</a>
-      <a href="#apps">Apps</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="header-right">
+      <nav>
+        <a href="#profile">Profile</a>
+        <a href="#apps">Apps</a>
+        <a href="#ai-capabilities">AI Showcase</a>
+        <a href="#certification">Certification</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="theme-toggle">
+        <span>Dark</span>
+        <label class="theme-switch">
+          <input type="checkbox" id="themeToggle" />
+          <span class="theme-slider"></span>
+        </label>
+        <span>Light</span>
+      </div>
+    </div>
   </header>
 
   <main>
+    <!-- PROFILE -->
     <section id="profile">
       <h2>Profile</h2>
       <div class="profile-card">
-        <!-- <img src="https://via.placeholder.com/150" alt="Vamshi Naidu Photo" /> -->
+        <img src="logo.jpg" alt="Profile" />
         <div class="profile-info">
           <h3>Vamshi Naidu</h3>
-          <p>Developer and creator of AVK Apps. Passionate about building intuitive UWP applications and solving
-            real-world problems through technology.</p>
-          <a href="https://www.linkedin.com/in/avknaidu/" target="_blank">View LinkedIn Profile</a>
+          <p>Developer and creator of AVK Apps. Passionate about UWP application development and building meaningful
+            tech experiences.</p>
+          <a href="https://www.linkedin.com/in/avknaidu/" target="_blank" rel="noopener noreferrer">
+            View LinkedIn Profile →
+          </a>
         </div>
       </div>
     </section>
 
+    <!-- APPS -->
     <section id="apps">
-      <h2>
-        <img src="logo.jpg" alt="Apps Logo" style="height:40px;vertical-align:middle;margin-right:8px;" />
-        My Apps on Microsoft Store
-      </h2>
+      <h2>My Apps on Microsoft Store</h2>
       <div class="app-list">
         <div class="app-card">
           <img
             src="https://store-images.s-microsoft.com/image/apps.4623.14443105256166735.db6f9302-4885-4b04-810c-658f85474f50.b4d3a092-c8dd-4a01-8e07-d84227720607?h=115"
-            alt="Lotto Coin Picker Logo" style="width:64px;height:64px;" />
+            alt="Lotto Coin Picker icon" />
           <h3>Lotto Coin Picker</h3>
-          <p style="min-height: 104px;">Generates random numbers between 1 to 90 with automatic and manual modes—perfect
-            for Tambola/Housie games.</p>
-          <footer style="background-color: white;">
-            <ms-store-badge productid="9nwtb3jj5x5b" productname="Lotto Coin Picker" window-mode="direct" theme="auto"
-               language="en-us" animation="off"></ms-store-badge>
-          </footer>
+          <p>Generates random numbers between 1–90 with auto & manual modes—perfect for Tambola / Housie.</p>
+          <div class="store-badge">
+            <a class="store-btn" href="https://apps.microsoft.com/detail/9nwtb3jj5x5b" target="_blank"
+              rel="noopener noreferrer">
+              <span class="icon">🛒</span>
+              <span>Download from Microsoft Store</span>
+            </a>
+          </div>
         </div>
+
         <div class="app-card">
           <img
             src="https://store-images.s-microsoft.com/image/apps.48056.13510798887674367.9692ab91-b69e-4eaa-9218-0a99d2d54212.229c9d72-bac8-4aff-9b68-be532e63e303?h=115"
-            alt="Stack 10 Logo" style="width:64px;height:64px;" />
+            alt="Stack 10 icon" />
           <h3>Stack 10</h3>
-          <p style="min-height: 104px;">A UWP client for Stack Exchange. Browse, vote, comment, and manage your posts
-            with Cortana integration and multi-device sync.</p>
-          <footer style="background-color: white;">
-            <ms-store-badge productid="9nblggh5361b" productname="Stack 10" window-mode="direct" theme="auto"
-               language="en-us" animation="off"></ms-store-badge>
-          </footer>
+          <p>A UWP client for Stack Exchange—browse, vote, comment & manage posts with Cortana support.</p>
+          <div class="store-badge">
+            <a class="store-btn" href="https://apps.microsoft.com/detail/9nblggh5361b" target="_blank"
+              rel="noopener noreferrer">
+              <span class="icon">🛒</span>
+              <span>Download from Microsoft Store</span>
+            </a>
+          </div>
         </div>
+
         <div class="app-card">
           <img
             src="https://store-images.s-microsoft.com/image/apps.4642.13868299787003487.0d5cf53d-869a-4494-b512-140234a4fc48.89ddcc64-7c59-4459-aea1-c5d66c2c5164?h=115"
-            alt="Resources.UWP Logo" style="width:64px;height:64px;" />
+            alt="Resources.UWP icon" />
           <h3>Resources.UWP</h3>
-          <p style="min-height: 104px;">A handy utility app for developers to explore and manage UWP resources. </p>
-          <footer style="background-color: white;">
-            <ms-store-badge productid="9mzlk6nbnjp2" productname="Resources.UWP" window-mode="direct" theme="auto"
-               language="en-us" animation="off"></ms-store-badge>
-          </footer>
+          <p>A powerful tool for developers to explore & manage UWP resources efficiently.</p>
+          <div class="store-badge">
+            <a class="store-btn" href="https://apps.microsoft.com/detail/9mzlk6nbnjp2" target="_blank"
+              rel="noopener noreferrer">
+              <span class="icon">🛒</span>
+              <span>Download from Microsoft Store</span>
+            </a>
+          </div>
         </div>
+
         <div class="app-card">
           <img
             src="https://store-images.s-microsoft.com/image/apps.16422.14050285741194832.4a14cc63-9659-482e-98f2-ebc5c62584e4.db04e5b0-1cb4-4e41-8f09-ff8d1d1c3d29?h=115"
-            alt="Morse Alphabets Logo" style="width:64px;height:64px;" />
+            alt="Morse Alphabets icon" />
           <h3>Morse Alphabets</h3>
-          <p style="min-height: 104px;">Learn and practice Morse code with interactive features and audio playback.</p>
-          <footer style="background-color: white;">
-            <ms-store-badge productid="9n8g6jcf9mrk" productname="Morse Alphabets" window-mode="direct" theme="auto"
-               language="en-us" animation="off"></ms-store-badge>
-          </footer>
+          <p>Learn and practice Morse code with audio and interactive exercises.</p>
+            <div class="store-badge">
+              <a class="store-btn" href="https://apps.microsoft.com/detail/9n8g6jcf9mrk" target="_blank"
+                rel="noopener noreferrer">
+                <span class="icon">🛒</span>
+                <span>Download from Microsoft Store</span>
+              </a>
+            </div>
         </div>
       </div>
     </section>
 
+    <!-- CERTIFICATION -->
+    <section id="certification">
+      <h2>Certification</h2>
+      <p>I’m continuously learning and upgrading my skills. Recently, I completed a foundational AI certification.</p>
+      <div class="cert-card">
+        <div class="cert-title"><strong>Google AI Essentials</strong></div>
+        <div class="cert-provider">Issued by Coursera · Google</div>
+        <div class="cert-link">
+          <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/JQP62OEFX5V8"
+            target="_blank" rel="noopener noreferrer">
+            View Certificate →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI CAPABILITIES SECTION -->
+    <section id="ai-capabilities">
+      <h2>Showcasing AI Capabilities in Modernizing this web page</h2>
+      <p>
+        This section highlights how an AI assistant collaborated with the developer to iteratively modernize a real,
+        production-style web page. Starting from a simple static layout, the design evolved into a responsive,
+        theme-aware
+        portfolio with refined app cards, custom Microsoft Store buttons, and mobile-friendly navigation. All of this
+        came from natural language prompts instead of manual trial and error.
+      </p>
+
+      <div class="ai-stats">
+        <h3>Quick Stats for this Modernization</h3>
+        <ul>
+          <li><strong>Approximate user–AI prompts:</strong> Around 10–12 focused prompts in this session.</li>
+          <li><strong>Major design iterations:</strong> Modern layout, multi-app grid, store button redesign, theme
+            toggle, mobile header fixes, and this AI showcase section.</li>
+          <li><strong>Key features:</strong> Responsive design, CSS variable theming, custom store buttons, improved
+            typography, and basic accessibility tweaks.</li>
+          <li><strong>Code touched:</strong> HTML structure, CSS (layout, theming, responsiveness), and JS for theme
+            persistence.</li>
+          <li><strong>Iteration speed:</strong> Each change was generated within seconds after each prompt.</li>
+        </ul>
+        <div class="ai-meta">
+          All of these changes were achieved in a single AI-assisted conversation, demonstrating how quickly a static
+          page
+          can be elevated when pairing human intent with AI-generated code.
+        </div>
+      </div>
+
+      <div class="ai-process">
+        <h3>AI Design & Development Approach (High-Level)</h3>
+        <ol>
+          <li>Modernized the overall layout using cleaner typography, spacing, and card-based design.</li>
+          <li>Refined the apps section to present all Microsoft Store apps in a responsive grid.</li>
+          <li>Replaced Microsoft Store badges with custom, on-brand buttons that fit cleanly within each card.</li>
+          <li>Introduced a dark/light theme system using CSS variables and a toggle with localStorage support.</li>
+          <li>Polished the mobile experience with sticky header behavior, navigation alignment, and single-column
+            layouts on small screens.</li>
+        </ol>
+      </div>
+
+      <div class="ai-timeline">
+        <h3>Prompt Timeline (Simplified)</h3>
+        <ol>
+          <li>Modernize layout and overall look & feel.</li>
+          <li>Add all apps to the grid with consistent styling.</li>
+          <li>Fix Microsoft Store buttons (missing, overflowing, scaling issues).</li>
+          <li>Add and persist dark/light theme toggle.</li>
+          <li>Improve mobile sticky header and navigation alignment.</li>
+          <li>Create this “Showcasing AI Capabilities” section with stats and timeline.</li>
+          <li>Switch to Microsoft Aptos typography and adjust image sizes for better balance.</li>
+        </ol>
+      </div>
+    </section>
+
+
+
+    <!-- CONTACT -->
     <section id="contact">
       <h2>Contact</h2>
-      <p>Want to collaborate or have questions? Reach out via <a href="mailto:avkapps@outlook.com">email</a> or
-        connect on <a href="https://discord.gg/FUJKe9JWBp">Discord</a>.</p>
+      <p>
+        Reach out via
+        <a href="mailto:avkapps@outlook.com">email</a>
+        or join our
+        <a href="https://discord.gg/FUJKe9JWBp" target="_blank" rel="noopener noreferrer">Discord</a>.
+      </p>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 AVK Naidu</p>
+    © 2025 AVK Naidu
+    <span class="footer-badge">Made with 🤖 AI Assistance</span>
   </footer>
+
+  <script>
+    (function () {
+      const body = document.body;
+      const toggle = document.getElementById('themeToggle');
+
+      // Load stored theme or respect OS preference on first visit
+      const stored = window.localStorage.getItem('theme');
+      if (stored === 'light' || stored === 'dark') {
+        body.setAttribute('data-theme', stored);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        body.setAttribute('data-theme', 'light');
+      }
+
+      const isLight = body.getAttribute('data-theme') === 'light';
+      if (toggle) toggle.checked = isLight;
+
+      if (toggle) {
+        toggle.addEventListener('change', function () {
+          const newTheme = this.checked ? 'light' : 'dark';
+          body.setAttribute('data-theme', newTheme);
+          window.localStorage.setItem('theme', newTheme);
+        });
+      }
+    })();
+  </script>
 </body>
 
 </html>
